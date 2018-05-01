@@ -1,0 +1,25 @@
+<header>
+    <h1>
+        New Burger
+    </h1>
+</header>
+
+<div class="flex-summary-container">
+    <div class="flex-summary-item">
+        <form action="/burgers/new" method="post">
+            Burger name:
+            <input type="text" name="name">
+            <br/>
+            Eatery:
+            <select name="eatery_id">
+                <% @eateries.each do |eatery| %>
+                <option value=<%= eatery.id %>><%= eatery.name  %></option>
+                <% end %>
+            </select>
+            <br/>
+            Burger price:
+            <input type="number" name="price">
+            <input type="submit" value="Submit burger">
+        </form>
+    </div>
+</div>

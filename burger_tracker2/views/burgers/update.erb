@@ -1,0 +1,23 @@
+<header>
+    <h1>
+        Update
+        <%= @burger.name %>
+    </h1>
+</header>
+
+<div class="flex-summary-container">
+    <form class="flex-summary-item" action="/burgers/<%= @burger.id %>/update" method="post">
+        Burger name:
+        <input type="text" name="name" value=<%= @burger.name %>>
+        <br/>
+        Eatery:
+        <select name="eatery_id">
+            <% @eateries.each do |eatery| %>
+            <option value=<%= eatery.id %> <%=selected="selected" if @burger.eatery_id == eatery.id%>>
+                <%= eatery.name  %>
+            </option>
+            <% end %>
+        </select>
+        <br/>      
+    </form>
+</div>

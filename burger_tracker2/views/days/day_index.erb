@@ -1,0 +1,22 @@
+<header>
+    <h1>
+        Day
+        <%= @days_string %>
+    </h1>
+</header>
+
+<div class="flex-content-container">
+    <% @days.each do |day| %>
+    <div class="flex-content-item">
+
+        <h3>
+            <%= day.name %>
+        </h3>
+        <% day.deals.each do |deal| %>
+        <%= deal.label %>
+        <%= deal.burgers.first.name %>
+        <br/>
+        <% end %>
+    </div>
+    <% end %>
+</div

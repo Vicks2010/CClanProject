@@ -1,0 +1,17 @@
+<header>
+    <h1>
+        Update
+        <%= @eatery.name %>
+    </h1>
+</header>
+
+<div class="flex-summary-container">
+    <form class="flex-summary-item" action="/eateries/<%= @eatery.id %>/update" method="post">
+        <p>
+            Please Enter Eatery Name!!!
+        </p>
+        <input type="text" name="name" value=<%= @eatery.name %>>
+        <br/>
+        <input type="submit" value="Submit eatery">
+    </form>
+</div>

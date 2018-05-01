@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Burgers-N-Deals!!!</title>
+        <link rel="icon" href="/images/teeth.png"/>
+        <link rel="stylesheet" type="text/css" href="/styles/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/styles/index_body.css"/>
+        <link rel="stylesheet" type="text/css" href="/styles/summary_body.css"/>
+        <link rel="stylesheet" type="text/css" href="/styles/navbar.css"/>
+        <link rel="stylesheet" type="text/css" href="/styles/header.css"/>
+        <link rel="stylesheet" type="text/css" href="/styles/deal_image.css"/>
+    </head>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <a href="/" class="nav-button">Homepage</a>
+            <a href="/burgers/best" class="nav-button">Best Deals</a>
+            <br/>
+            <a href="/eateries" class="nav-button">View Eateries</a>
+            <a href="/burgers" class="nav-button">View Burgers</a>
+            <a href="/deals" class="nav-button">View Deals</a>
+            <a href="/days" class="nav-button">View Days</a>
+            <br/>
+            <a href="/type_of_burgers/new" class="nav-button">Add type of Burger</a>
+            <br/>
+            <a href="/eateries/new" class="nav-button">Add New Eatery</a>
+            <a href="/burgers/new" class="nav-button">New burger</a>
+            <a href="/deals/new" class="nav-button">New deal</a>
+            <br/>
+            <a href="/selector" class="nav-button">Admin tools</a>
+        </div>
+    </nav>
+    <%= yield %>
+</body>
+</html>

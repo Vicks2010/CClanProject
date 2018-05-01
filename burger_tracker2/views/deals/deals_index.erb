@@ -1,0 +1,25 @@
+<header>
+    <h1>
+        Deals
+        <%= @deals_string %>
+    </h1>
+</header>
+
+<div class="flex-content-container">
+    <% @deals.each do |deal| %>
+    <div class="flex-content-item">
+
+        <h3>
+            <a href="/deals/<%= deal.id %>/summary"><%= deal.label %></a>
+        </h3>
+        <% deal.burgers.each do |burger| %>
+        <%= burger.name %>
+
+        Available on
+        <%= deal.days.first.name %>
+        @
+        <%= burger.eateries.first.name %>
+        <% end %>
+    </div>
+    <% end %>
+</div

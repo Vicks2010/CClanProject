@@ -1,0 +1,32 @@
+<header>
+    <h1>
+        <%= @eatery.name %>
+    </h1>
+    <div class="flex-header-container">
+        <form method="get" action="/eateries/<%= @eatery.id %>/update" class="flex-header-item">
+            <input type="submit" value="EDIT" class="header-button">
+        </form>
+        <form method="post" action="/eateries/<%= @eatery.id %>/delete" class="flex-header-item">
+            <input type="submit" value="DELETE" class="header-button">
+        </form>
+    </div>
+</header>
+
+<div class="flex-summary-container">
+    <div class="flex-summary-item">
+        <h3>
+            <a href="/eateries/<%= @eatery.id %>/summary"><%= @eatery.name %></a>
+        </h3>
+        <% @eatery.burgers.each do |burger| %>
+
+        <% if !(burger.deals.empty?) %>
+        <a href="/burgers/<%= burger.id %>/summary"><%= "#{burger.name}: " %></a>
+        <%= burger.deals.first.label %>
+        on
+        <%= burger.deals.first.days.first.name %>
+    <% else %>
+        <a href="/burgers/<%= burger.id %>/summary"><%= burger.name %></a>
+        <% end %>        
+        <% end %>
+    </div>
+</div>

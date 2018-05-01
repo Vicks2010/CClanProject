@@ -1,0 +1,38 @@
+<header>
+    <h1>
+        Now
+        <%= @eateries_string %>
+    </h1>
+    <div class="flex-header-container">
+        <form method="get" action="/eateries/burgers" class="flex-header-item">
+            <input type="submit" value="THE BURGERS" class="header-button">
+        </form>
+        <form method="get" action="/burger_eateries/deals" class="flex-header-item">
+            <input type="submit" value="BURGER DEALS" class="header-button">
+        </form>
+    </div>
+</header>
+
+<div class="flex-content-container">
+    <%  @eateries.each do |eatery| %>
+
+    <%  unless eatery.deals.empty? %>
+    <div class="flex-content-item">
+        <h3>
+            <a href="/eateries/<%= eatery.id %>/summary"><%= eatery.name %></a>
+        </h3>
+        <% eatery.deals.each do |deal| %>
+        <a href="/deals/<%= deal.id%>/summary">
+            On
+            <%= "#{deal.days.first.name}," %>
+            <%= deal.label %>
+        </a>
+        the
+
+        <a href="/burgers/<%= deal.burgers.first.id %>/summary"><%= deal.burgers.first.name %></a>
+        <br/>
+        <% end %>
+    </div>
+    <%  end %>
+    <%  end %>
+</div>

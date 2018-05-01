@@ -1,0 +1,34 @@
+<header>
+    <h1>
+        Good News! New Deal!!
+    </h1>
+</header>
+
+<div class="flex-summary-container">
+    <div class="flex-summary-item">
+        <form action="/deals/new" method="post">
+            Please Enter the Deal Name
+            <input type="text" name="name" value="enter name here">
+            Please Which Burger does the deal apply to? Choose
+            <select name="burger_id">
+                <% @burgers.each do |burger| %>
+                <% if !(@taken_burger_ids.include?(burger.id)) %>
+                <option value=<%= burger.id %>>
+                    <%= burger.name  %>
+                    @
+                    <%= burger.eateries.first.name %>
+                </option>
+                <% end %>
+                <% end %>
+            </select>
+            <br/>
+            Choose the day the deal takes place, Please.
+            <select name="day_id">
+                <% Day.all.each do |day| %>
+                <option value=<%= day.id %>><%= day.name %></option>
+                <% end %>
+            </select>            
+            <input type="submit" value="Submit deal">
+        </form>
+    </div>
+</div>
